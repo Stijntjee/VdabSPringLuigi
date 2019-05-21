@@ -51,6 +51,7 @@ public class PizzaController
     @GetMapping("prijzen")
     public ModelAndView prijzen()
     {
+        
         return new ModelAndView("prijzen", "prijzen", uniekePrijzen());
     }
 
