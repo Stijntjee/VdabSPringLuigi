@@ -12,6 +12,11 @@ body {
 	background-color: LightBlue;
 }
 
+.salmon
+{
+	background-color: salmon;
+}
+
 .fullwidth {
 	width: 100%;
 }
