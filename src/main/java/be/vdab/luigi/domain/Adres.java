@@ -16,6 +16,7 @@ public class Adres {
     }
     //GETTERS & SETTERS
     public String getStraat() {
+
         return straat;
     }
 
