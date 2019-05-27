@@ -15,8 +15,7 @@ public class Adres {
         this.gemeente = gemeente;
     }
     //GETTERS & SETTERS
-    public String getStraat() { return straat;
-    }
+    public String getStraat() { return straat; }
 
     public String getHuisNr() {
         return huisNr;

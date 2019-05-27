@@ -1,6 +1,7 @@
 package be.vdab.luigi.controllers;
 
 import be.vdab.luigi.domain.Pizza;
+import be.vdab.luigi.services.EuroService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,14 @@ public class PizzaController
             new Pizza(2, "Margherita", BigDecimal.valueOf(5), false),
             new Pizza(3, "Calzone", BigDecimal.valueOf(4), false)};
 
+    private final EuroService euroService;
+
+    //CONSTRUCTORS
+    PizzaController(EuroService euroService)
+    {
+        this.euroService = euroService;
+    }
+
     @GetMapping
     public ModelAndView pizzas()
     {
@@ -36,6 +45,7 @@ public class PizzaController
             if (pizzatje.getId() == (id))
             {
                 modelAndView.addObject("pizza", pizzatje);
+                modelAndView.addObject("inDollar", euroService.naarDollar(pizzatje.getPrijs()));
                 return modelAndView;
             }
         }
